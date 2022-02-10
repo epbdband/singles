@@ -14,12 +14,12 @@
   bes4 \dead f8 des'8 r8 c8 r8 aes8( |
   bes4) bes4:8 bes4:8 bes4:8 |
   bes4 \dead f8 ees'8 r8 b8 r8 aes8( |
-  g4 g4:8 g4:8 g4:8 |
+  g4) g4:8 g4:8 g4:8 |
 
   bes4 \dead f8 ees'8 r8 b8 r8 aes8( |
   bes4) bes4:8 bes4:8 bes4:8 |
   bes4 \dead f8 des'8 r8 c8 r8 aes8( |
-  g4 g4:8 g4:8 g4 |
+  g4) g4:8 g4:8 g4 |
 }
 
 \gridPutMusic "guitar strum" 18 {
