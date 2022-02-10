@@ -113,4 +113,38 @@
   \invertChords 2 bes\breve/f
   \invertChords 2 bes\breve:m/f
   ges8 f8 r4 r2
+  R1
+}
+
+
+\gridPutMusic "chords" 13 \chordmode {
+  %% FIXME: fret diagrams
+  \repeat unfold 2 {
+    \repeat unfold 2 {
+      aes4 r8 b8 r8 bes8 r8 ges8 |
+    }
+    \alternative {
+      { aes1 | }
+      { f1 | }
+    }
+  }
+}
+
+\gridPutMusic "chords" 17 \chordmode {
+  %% FIXME: fret diagrams
+  bes4 r8 des'8 r8 c'8 r8 aes8 |
+  bes1 |
+  %% FIXME: force diagram
+  bes4 r8 ees'8 r8 b8 r8 aes8 |
+  g1 |
+
+  bes4 r8 ees'8 r8 b8 r8 aes8 |
+  bes1 |
+  %% FIXME: force diagram
+  bes4 r8 des'8 r8 c'8 r8 aes8 |
+  g1 |
+}
+
+\gridPutMusic "chords" 18 \chordmode {
+  ges4 \bar "||"
 }
