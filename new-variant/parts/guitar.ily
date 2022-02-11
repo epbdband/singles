@@ -24,25 +24,27 @@
 
 \gridPutMusic "guitar" 5 { \gridGetCellMusic "guitar" 3 }
 
+\gridPutMusic "guitar lead" 6 \relative c' {
+  \include "notes/guitar-IIIb.ily"
+}
+
 \gridPutMusic "guitar" 6 { \gridGetCellMusic "guitar" 4 }
 
 \gridPutMusic "guitar" 7 { \gridGetCellMusic "guitar" 3 }
 
-\gridPutMusic "guitar lead" 8 {
+\gridPutMusic "guitar lead" 8 \relative c'' {
   \ottava #1
-  <<
-    \relative c'' {
-      \repeat unfold 2 {
-        \include "notes/guitar-IVb.ily"
-      }
-    } \\ \relative c' {
-      \include "notes/guitar-IVa.ily"
-    }
-  >>
+  \repeat unfold 2 {
+    \include "notes/guitar-IVb.ily"
+  }
   \ottava #0
 }
 
-\gridPutMusic "guitar" 8 { \gridGetCellMusic "guitar" 4 }
+\gridPutMusic "guitar" 8 \relative c'' {
+  \ottava #1
+  \include "notes/guitar-IVa.ily"
+  \ottava #0
+}
 
 \gridPutMusic "guitar" 9 { \gridGetCellMusic "guitar" 3 }
 

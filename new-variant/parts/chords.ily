@@ -45,9 +45,9 @@
 
 \gridPutMusic "chords" 1 \chordmode {
   \set predefinedDiagramTable = #intro-fret-table
-  f,\breve:7^5
-  \invertChords 2 bes\breve
-  \invertChords 2 bes\breve:m
+  f\breve:7^5
+  \invertChords 2 bes,\breve
+  \invertChords 2 bes,\breve:m
   f\breve:3.5.8
 }
 

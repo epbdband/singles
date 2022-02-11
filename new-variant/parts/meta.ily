@@ -125,5 +125,6 @@
 }
 
 \gridPutMusic "meta" 18 {
+  \mark \default
   s4 \bar "|."
 }
