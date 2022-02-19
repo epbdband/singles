@@ -1,7 +1,21 @@
+\gridPutMusic "drums up" 1 \drummode {
+  s1*8
+}
+
+\gridPutMusic "drums down" 1 \drummode {
+  %% FIXME: do this for the whole context
+  \override MultiMeasureRest.staff-position = #0
+  \override Rest.staff-position = #0
+  R1*8
+}
+
+\gridPutMusic "drums up" 2 \drummode {
+  s1*6 |
+  s2 |
+}
+
 \gridPutMusic "drums down" 2 \drummode {
-  \bye
   R1*6 |
-  \temporary \override Rest.staff-position = #0
   r2 \hi <tomfl toml>4 r4 |
   <tomfl toml>8 <tomfl toml>8 r4 <tomfl toml>4 r4 |
 }

@@ -6,7 +6,7 @@
 \setOption naptaker.guitar-capo #3
 \setOption naptaker.guitar-tabs ##f
 \setOption naptaker.guitar-tuning #guitar-open-d-tuning % \stringTuning <f, c f a c' f>
-\setOption naptaker.paper-orientation #'landscape
+\setOption naptaker.paper-orientation #'portrait
 \setOption naptaker.staff-size #18
 
 \header {

@@ -6,10 +6,20 @@
   \include "notes/guitar-Ib.ily"
 }
 
+\gridPutMusic "guitar lead" 3 {
+  \bye
+  R1*4
+  \hi
+}
+
 \gridPutMusic "guitar" 3 \relative c {
   \repeat unfold 2 {
     \include "notes/guitar-II.ily"
   }
+}
+
+\gridPutMusic "guitar lead" 4 \relative c' {
+  \include "notes/guitar-IIIb.ily"
 }
 
 \gridPutMusic "guitar" 4 \relative c, {
@@ -18,9 +28,7 @@
   }
 }
 
-\gridPutMusic "guitar lead" 4 \relative c' {
-  \include "notes/guitar-IIIb.ily"
-}
+\gridPutMusic "guitar lead" 5 { \gridGetCellMusic "guitar lead" 3 }
 
 \gridPutMusic "guitar" 5 { \gridGetCellMusic "guitar" 3 }
 
