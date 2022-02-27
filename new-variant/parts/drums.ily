@@ -11,7 +11,8 @@
 
 \gridPutMusic "drums up" 2 \drummode {
   s1*6 |
-  s2 |
+  s2 s2 |
+  s1
 }
 
 \gridPutMusic "drums down" 2 \drummode {
