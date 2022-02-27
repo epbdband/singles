@@ -157,6 +157,7 @@
   \set predefinedDiagramTable = #power-fret-table
   \repeat unfold 2 {
     \repeat unfold 2 {
+      \once \set chordChanges = ##f
       aes4:5.8 r8 b8:5.8 r8 bes8:5.8 r8 ges8:5.8 |
     }
     \alternative {
