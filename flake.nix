@@ -35,7 +35,7 @@
 
       oll-lib = prev.stdenv.mkDerivation {
         pname = "oll-lib";
-        version = "2021-11-28";
+        version = "2022-03-04";
         dontUnpack = true;
         dontBuild = true;
         buildInputs = with inputs; [ oll-core gridly naptaker ];
