@@ -117,11 +117,11 @@
 
 #(define power-fret-table (make-fretboard-table))
 
-#(define (mk-power-chord fret)
+#(define (mk-power-chord fret finger)
    `((capo 3)
-     (place-fret 6 ,fret 1)
-     ;; (place-fret 5 ,fret 1)
-     (place-fret 4 ,fret 1)
+     (place-fret 6 ,fret ,finger)
+     ;; (place-fret 5 ,fret ,finger)
+     (place-fret 4 ,fret ,finger)
      (barre 4 6 ,fret)
      (mute 3)
      (mute 2)
@@ -129,19 +129,19 @@
 
 \storePredefinedDiagram #power-fret-table \chordmode { aes:5.8 }
                         #guitar-open-d-tuning
-                        #(mk-power-chord 6)
+                        #(mk-power-chord 6 1)
 
 \storePredefinedDiagram #power-fret-table \chordmode { b:5.8 }
                         #guitar-open-d-tuning
-                        #(mk-power-chord 9)
+                        #(mk-power-chord 9 4)
 
 \storePredefinedDiagram #power-fret-table \chordmode { bes:5.8 }
                         #guitar-open-d-tuning
-                        #(mk-power-chord 8)
+                        #(mk-power-chord 8 3)
 
 \storePredefinedDiagram #power-fret-table \chordmode { ges:5.8 }
                         #guitar-open-d-tuning
-                        #(mk-power-chord 4)
+                        #(mk-power-chord 4 1)
 
 \storePredefinedDiagram #power-fret-table \chordmode { f:5.8 }
                         #guitar-open-d-tuning
@@ -167,25 +167,38 @@
   }
 }
 
-\storePredefinedDiagram #power-fret-table \chordmode { des':5.8 }
-                        #guitar-open-d-tuning
-                        #(mk-power-chord 11)
+#(define power-prime-fret-table (make-fretboard-table))
 
-\storePredefinedDiagram #power-fret-table \chordmode { c':5.8 }
+\storePredefinedDiagram #power-prime-fret-table \chordmode { bes:5.8 }
                         #guitar-open-d-tuning
-                        #(mk-power-chord 10)
+                        #(mk-power-chord 8 1)
 
-\storePredefinedDiagram #power-fret-table \chordmode { ees':5.8 }
+\storePredefinedDiagram #power-prime-fret-table \chordmode { des':5.8 }
                         #guitar-open-d-tuning
-                        #(mk-power-chord 13)
+                        #(mk-power-chord 11 4)
 
-
-\storePredefinedDiagram #power-fret-table \chordmode { g:5.8 }
+\storePredefinedDiagram #power-prime-fret-table \chordmode { c':5.8 }
                         #guitar-open-d-tuning
-                        #(mk-power-chord 5)
+                        #(mk-power-chord 10 3)
+
+\storePredefinedDiagram #power-prime-fret-table \chordmode { aes:5.8 }
+                        #guitar-open-d-tuning
+                        #(mk-power-chord 6 1)
+
+\storePredefinedDiagram #power-prime-fret-table \chordmode { ees':5.8 }
+                        #guitar-open-d-tuning
+                        #(mk-power-chord 13 4)
+
+\storePredefinedDiagram #power-prime-fret-table \chordmode { b:5.8 }
+                        #guitar-open-d-tuning
+                        #(mk-power-chord 9 3)
+
+\storePredefinedDiagram #power-prime-fret-table \chordmode { g:5.8 }
+                        #guitar-open-d-tuning
+                        #(mk-power-chord 5 1)
 
 \gridPutMusic "chords" 17 \chordmode {
-  \set predefinedDiagramTable = #power-fret-table
+  \set predefinedDiagramTable = #power-prime-fret-table
   bes4:5.8 r8 des':5.8 r8 c'8:5.8 r8 aes8:5.8 |
   bes1:5.8 |
   \once \set chordChanges = ##f
