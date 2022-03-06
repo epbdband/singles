@@ -6,12 +6,6 @@
   \include "notes/guitar-Ib.ily"
 }
 
-\gridPutMusic "guitar lead" 3 {
-  \bye
-  R1*4
-  \hi
-}
-
 \gridPutMusic "guitar" 3 \relative c {
   \repeat unfold 2 {
     \include "notes/guitar-II.ily"
@@ -28,9 +22,11 @@
   }
 }
 
-\gridPutMusic "guitar lead" 5 { \gridGetCellMusic "guitar lead" 3 }
-
-\gridPutMusic "guitar" 5 { \gridGetCellMusic "guitar" 3 }
+\gridPutMusic "guitar" 5 {
+  \once \override Staff.Clef.X-offset = #8
+  \partial 8 s8
+  \gridGetCellMusic "guitar" 3
+}
 
 \gridPutMusic "guitar lead" 6 \relative c' {
   \include "notes/guitar-IIIb.ily"
@@ -41,11 +37,11 @@
 \gridPutMusic "guitar" 7 { \gridGetCellMusic "guitar" 3 }
 
 \gridPutMusic "guitar lead" 8 \relative c'' {
-  \ottava #1
+  %% \ottava #1
   \repeat unfold 2 {
     \include "notes/guitar-IVb.ily"
   }
-  \ottava #0
+  %% \ottava #0
 }
 
 \gridPutMusic "guitar" 8 \relative c'' {
@@ -80,12 +76,18 @@
 }
 
 \gridPutMusic "guitar lead" 13 \relative c' {
+  \bye
   R1 |
+  \hi
+  \once \set Staff.forceClef = ##t
   r8 f8 f8 f8 f8 f8 f8 f8 |
   f8 f8 f8 f8 f8 f8 f8 f8 |
   f8\noBeam b,8 b8 b8 b8 bes8 aes8 f8 |
 
+  \bye
   R1 |
+  \hi
+  \once \set Staff.forceClef = ##t
   r8 f'8 f8 f8 f8 f8 f8 f8 |
   f8 <f aes>8 q8 q8 q8 q8 q8 q8 |
   q8 <f a>8 q8 q8 ~ q2 |

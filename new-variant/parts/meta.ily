@@ -1,6 +1,7 @@
 \gridPutMusic "meta" 1 {
- \global
+  \global
   %% \mark \default
+  \override Score.VerticalAxisGroup.staff-staff-spacing.padding = #3
   s1*8
   \break
 }
@@ -25,6 +26,7 @@
 
 \gridPutMusic "meta" 5 {
   %% \mark \default
+  \partial 8 s8
   s1*4
   \break
 }
