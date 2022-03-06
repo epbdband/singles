@@ -5,7 +5,7 @@
     }
     \alternative {
       { aes4) aes4:8 aes4:8 aes4:8 | }
-      { f4) f8 f8 f8 f8 f8 f8 | }
+      { f4) f4:8 f4:8 f4:8 | }
     }
   }
 }
