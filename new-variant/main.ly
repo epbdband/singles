@@ -6,15 +6,57 @@
 \setOption naptaker.guitar-capo #3
 \setOption naptaker.guitar-tabs ##f
 \setOption naptaker.guitar-tuning #guitar-open-d-tuning % \stringTuning <f, c f a c' f>
-\setOption naptaker.paper-orientation #'landscape
-%% \setOption naptaker.paper-size "letter"
+\setOption naptaker.paper-orientation #'portrait
+\setOption naptaker.paper-size "arch a"
 \setOption naptaker.staff-size #18
 
 \header {
   title = "Patient Circles Advance"
   subtitle = "(A New Variant)"
-  composer = "EPBD"
+  composer = \markup {
+    \center-column {
+      "Music and Lyrics"
+      "by EPBD"
+    }
+  }
+  subsubtitle = \markup {
+    \fill-line {
+      \center-column {
+        \null
+        \epsfile #X #60 #"cover.eps"
+        "Painting by PD"
+      }
+    }
+  }
   copyright = "© 2021-2022 Eric Bailey"
+}
+
+\paper {
+  two-sided = ##t
+  %% print-first-page-number = ##t
+  evenHeaderMarkup = \markup {
+    \column {
+      \fill-line {
+        \null
+        \line {
+          \on-the-fly #print-page-number-check-first
+          \fromproperty #'page:page-number-string
+        }
+      }
+    }
+  }
+
+  oddHeaderMarkup = \markup {
+    \column {
+      \fill-line {
+        \line {
+          \on-the-fly #print-page-number-check-first
+          \fromproperty #'page:page-number-string
+        }
+        \null
+      }
+    }
+  }
 }
 
 Key = { \key f \major }
@@ -23,7 +65,7 @@ global = { \Tempo \defaultTimeSignature \time 4/4 }
 
 \templateInit
   #'("meta" "chords" "vox" "guitar" "guitar strum" "guitar lead" "organ up" "organ down" "drums up" "drums down")
-  #'(8 8 4 4 (33 . 8) 4 4 4 4 4 4 4 8 4 4 4 8 (1 . 4))
+  #'(8 8 (33 . 8) 4 4 4 8 4 4 4 8 (1 . 4))
 
 %% \gridSetRange #'(12 . 18)
 
@@ -40,10 +82,12 @@ global = { \Tempo \defaultTimeSignature \time 4/4 }
 }
 \with {
   \consists "Staff_performer"
+  instrumentName = "Organ"
   midiInstrument = "rock organ"
 }
 "default"
 
+\include "parts/lyrics.ily"
 \include "parts/organ.ily"
 
 theScore = <<

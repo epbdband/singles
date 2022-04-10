@@ -30,6 +30,11 @@
 }
 
 \gridPutMusic "drums down" 3 \drummode {
+  \once \override Staff.Clef.X-offset = #8
+  %% \stopStaff
+  \partial 8 s8
+  %% \startStaff
+  %% \gridGetCellMusic "drums down" 8
   \repeat unfold 4 {
     <tomfl toml>8 <tomfl toml>8 r4 <tomfl toml>4 r4 |
   }
@@ -58,35 +63,15 @@
   }
 }
 
-\gridPutMusic "drums down" 5 {
-  \once \override Staff.Clef.X-offset = #8
-  \partial 8 s8
-  \gridGetCellMusic "drums down" 3
-}
+\gridPutMusic "drums up" 5 \gridGetCellMusic "drums up" 4
+
+\gridPutMusic "drums down" 5 \gridGetCellMusic "drums down" 4
 
 \gridPutMusic "drums up" 6 \gridGetCellMusic "drums up" 4
 
 \gridPutMusic "drums down" 6 \gridGetCellMusic "drums down" 4
 
-\gridPutMusic "drums down" 7 \gridGetCellMusic "drums down" 3
-
-\gridPutMusic "drums up" 8 \gridGetCellMusic "drums up" 4
-
-\gridPutMusic "drums down" 8 \gridGetCellMusic "drums down" 4
-
-\gridPutMusic "drums down" 9 \gridGetCellMusic "drums down" 3
-
-\gridPutMusic "drums up" 10 \gridGetCellMusic "drums up" 4
-
-\gridPutMusic "drums down" 10 \gridGetCellMusic "drums down" 4
-
-\gridPutMusic "drums down" 11 \gridGetCellMusic "drums down" 3
-
-\gridPutMusic "drums up" 12 \gridGetCellMusic "drums up" 4
-
-\gridPutMusic "drums down" 12 \gridGetCellMusic "drums down" 4
-
-\gridPutMusic "drums down" 13 \drummode {
+\gridPutMusic "drums down" 7 \drummode {
   \temporary \override NoteHead.color = #red
   \temporary \override Stem.color = #red
   \repeat unfold 8 {
@@ -96,14 +81,19 @@
   \revert Stem.color
 }
 
-\gridPutMusic "drums down" 14 \gridGetCellMusic "drums down" 3
+\gridPutMusic "drums down" 8 \drummode {
+  \repeat unfold 4 {
+    <tomfl toml>8 <tomfl toml>8 r4 <tomfl toml>4 r4 |
+  }
+}
 
-\gridPutMusic "drums up" 15 \gridGetCellMusic "drums up" 4
+\gridPutMusic "drums up" 9 \gridGetCellMusic "drums up" 4
 
-\gridPutMusic "drums down" 15 \gridGetCellMusic "drums down" 4
+\gridPutMusic "drums down" 9 \gridGetCellMusic "drums down" 4
 
+\gridPutMusic "drums down" 10 \gridGetCellMusic "drums down" 8
 
-\gridPutMusic "drums down" 17 \drummode {
+\gridPutMusic "drums down" 11 \drummode {
   \temporary \override NoteHead.color = #red
   \temporary \override Stem.color = #red
   \repeat unfold 8 {
@@ -113,10 +103,10 @@
   \revert Stem.color
 }
 
-\gridPutMusic "drums up" 18 \drummode {
+\gridPutMusic "drums up" 12 \drummode {
   sn4
 }
 
-\gridPutMusic "drums down" 18 \drummode {
+\gridPutMusic "drums down" 12 \drummode {
   tomfl4
 }

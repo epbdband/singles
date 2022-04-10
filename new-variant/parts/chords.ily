@@ -114,7 +114,6 @@
   R1
 }
 
-
 #(define power-fret-table (make-fretboard-table))
 
 #(define (mk-power-chord fret finger)
@@ -153,7 +152,7 @@
                            (mute 2)
                            (mute 1))
 
-\gridPutMusic "chords" 13 \chordmode {
+\gridPutMusic "chords" 7 \chordmode {
   \set predefinedDiagramTable = #power-fret-table
   \repeat unfold 2 {
     \repeat unfold 2 {
@@ -197,7 +196,7 @@
                         #guitar-open-d-tuning
                         #(mk-power-chord 5 1)
 
-\gridPutMusic "chords" 17 \chordmode {
+\gridPutMusic "chords" 11 \chordmode {
   \set predefinedDiagramTable = #power-prime-fret-table
   bes4:5.8 r8 des':5.8 r8 c'8:5.8 r8 aes8:5.8 |
   bes1:5.8 |
@@ -212,7 +211,7 @@
   g1:5.8 |
 }
 
-\gridPutMusic "chords" 18 \chordmode {
+\gridPutMusic "chords" 12 \chordmode {
   \set predefinedDiagramTable = #power-fret-table
   ges4:5.8 \bar "||"
 }

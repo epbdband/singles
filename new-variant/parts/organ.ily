@@ -1,4 +1,4 @@
-\gridPutMusic "organ up" 14 \relative c {
+\gridPutMusic "organ up" 8 \relative c {
   \bye
   R1 |
   r2 r4
@@ -10,7 +10,12 @@
   f8 <c f aes>4. <b e g>4-! <bes ees ges>4-! |
 }
 
-\gridPutMusic "organ up" 15 \relative c'' {
+\gridPutMusic "organ down" 8 {
+  \bye
+  s1*4
+}
+
+\gridPutMusic "organ up" 9 \relative c'' {
   \bye
   R1*2 |
   \hi
@@ -20,7 +25,7 @@
   }
 }
 
-\gridPutMusic "organ down" 15 \relative c {
+\gridPutMusic "organ down" 9 \relative c {
   \bye
   R1*2 |
   \hi
@@ -32,3 +37,4 @@
     r4 |
   }
 }
+%}
