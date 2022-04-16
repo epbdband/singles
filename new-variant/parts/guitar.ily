@@ -42,12 +42,19 @@
 }
 
 \gridPutMusic "guitar lead" 6 \relative c, {
-  \set midiInstrument = "overdriven guitar"
+  \once \override TextSpanner.style = #'zigzag
+  \once \override TextSpanner.zigzag-length = #0.51
+  \once \override TextSpanner.zigzag-width = #3
+  \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #CENTER
+  \once \override TextSpanner.bound-details.left.text = #"Fuzz"
+  \once \override TextSpanner.bound-details.right.padding = #1
+  \fuzzOn \startTextSpan
   \ottava #-1
   \repeat unfold 2 {
     \include "notes/guitar-V.ily"
   }
   \ottava #0
+  \fuzzOff \stopTextSpan
 }
 
 \gridPutMusic "guitar" 6 \relative c, {
@@ -62,18 +69,34 @@
   \bye
   R1 |
   \hi
+  \once \override TextSpanner.style = #'zigzag
+  \once \override TextSpanner.zigzag-length = #0.51
+  \once \override TextSpanner.zigzag-width = #3
+  \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #CENTER
+  \once \override TextSpanner.bound-details.left.text = #"Fuzz"
+  \once \override TextSpanner.bound-details.right.padding = #1
+  \fuzzOn \startTextSpan
   \once \set Staff.forceClef = ##t
   r8 f8 f8 f8 f8 f8 f8 f8 |
   f8 f8 f8 f8 f8 f8 f8 f8 |
   f8\noBeam b,8 b8 b8 b8 bes8 aes8 f8 |
+  \stopTextSpan
 
   \bye
   R1 |
   \hi
+  \once \override TextSpanner.style = #'zigzag
+  \once \override TextSpanner.zigzag-length = #0.51
+  \once \override TextSpanner.zigzag-width = #3
+  \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #CENTER
+  \once \override TextSpanner.bound-details.left.text = #"Fuzz"
+  \once \override TextSpanner.bound-details.right.padding = #1
+  \startTextSpan
   \once \set Staff.forceClef = ##t
   r8 f'8 f8 f8 f8 f8 f8 f8 |
   f8 <f aes>8 q8 q8 q8 q8 q8 q8 |
   q8 <f a>8 q8 q8 ~ q2 |
+  \fuzzOff \stopTextSpan
 }
 
 \gridPutMusic "guitar" 8 {
@@ -86,4 +109,14 @@
 
 \gridPutMusic "guitar" 10 { \gridGetCellMusic "guitar" 8 }
 
-\gridPutMusic "guitar lead" 10 { \gridGetCellMusic "guitar" 6 }
+\gridPutMusic "guitar lead" 10 {
+  \once \override TextSpanner.style = #'zigzag
+  \once \override TextSpanner.zigzag-length = #0.51
+  \once \override TextSpanner.zigzag-width = #3
+  \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #CENTER
+  \once \override TextSpanner.bound-details.left.text = #"Fuzz"
+  \once \override TextSpanner.bound-details.right.padding = #1
+  \fuzzOn \startTextSpan
+  \gridGetCellMusic "guitar" 6
+  \fuzzOff \stopTextSpan
+}

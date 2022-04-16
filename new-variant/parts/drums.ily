@@ -2,10 +2,10 @@
   %% FIXME: do this for the whole context
   \override MultiMeasureRest.staff-position = #0
   \override Rest.staff-position = #0
-  r4 cymc2.:32\< ~ | cymc1\! |
-  r4 cymr2.:32\< ~ | cymr1\! |
-  r4 cymc2.:32\< ~ | cymc1:32 ~ |
-  cymc1\! ~ | cymc1 |
+  r4 cymr2.:32\mp\< ~ | cymr1\! |
+  r4 cymc2.:32\mp\< ~ | cymc1\! |
+  r4 cymr2.:32\< ~ | cymr1:32 ~ |
+  cymr1\f\! ~ | cymr1 |
 }
 
 \gridPutMusic "drums down" 1 \drummode {
@@ -16,10 +16,10 @@
 }
 
 \gridPutMusic "drums up" 2 \drummode {
-  r4 cymc2.:32 ~ | cymc1 |
-  r4 cymc2.:32 ~ | cymc1 |
-  r4 cymc2.:32 ~ | cymc1:32 ~ |
-  cymc2:32 s2 |
+  cymr1:32\p ~ | cymr1 |
+  cymr1:32\mp\< ~ | cymr1 ~|
+  cymr1:32 ~ | cymr1:32 ~ |
+  cymr2\mf\! s2 |
   s1
 }
 
@@ -71,14 +71,26 @@
 
 \gridPutMusic "drums down" 6 \gridGetCellMusic "drums down" 4
 
-\gridPutMusic "drums down" 7 \drummode {
-  \temporary \override NoteHead.color = #red
-  \temporary \override Stem.color = #red
-  \repeat unfold 8 {
-    bd4 <bd sn>4 bd4 <bd sn>4 |
+\gridPutMusic "drums up" 7 \drummode {
+  << { cymr1 } \\ { \ope \stemUp s4 sn8 s8 s8 s8 sn8 sn8 } >> |
+  \ope
+  s4 sn8 sn8 s4 sn8 sn8 |
+  \repeat percent 3 {
+    s4 sn8 s8 s8 s8 sn8 sn8 |
+    s4 sn8 sn8 s4 sn8 sn8 |
   }
-  \revert NoteHead.color
-  \revert Stem.color
+  \nope
+}
+
+\gridPutMusic "drums down" 7 \drummode {
+  \ope
+  bd4 s8 bd8 <bd tomfl>8 bd8 tomfl4 |
+  <bd tomfl>8 bd8 s8 s8 <bd tomfl>8 <bd tomfl>8 s8 s8 |
+  \repeat percent 3 {
+    bd4 s8 bd8 <bd tomfl>8 bd8 tomfl4 |
+    <bd tomfl>8 bd8 s8 s8 <bd tomfl>8 <bd tomfl>8 s8 s8 |
+  }
+  \nope
 }
 
 \gridPutMusic "drums down" 8 \drummode {

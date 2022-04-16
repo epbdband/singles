@@ -4,6 +4,8 @@
             Score
             .NonMusicalPaperColumn
             .line-break-system-details #'((extra-offset . (0 . 12)))
+
+  \override Score.VerticalAxisGroup.staff-staff-spacing.padding = #3
   s1*8
   \break
 }

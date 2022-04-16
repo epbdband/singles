@@ -5,14 +5,9 @@
   \hi
   \once \set Staff.forceClef = ##t
   \override Glissando.style = #'zigzag
-  f\glissando |
+  f\glissando^\markup { \box \pad-markup #0.5 "Organ" } |
   f''1 ~ |
   f8 <c f aes>4. <b e g>4-! <bes ees ges>4-! |
-}
-
-\gridPutMusic "organ down" 8 {
-  \bye
-  s1*4
 }
 
 \gridPutMusic "organ up" 9 \relative c'' {

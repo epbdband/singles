@@ -197,6 +197,7 @@
                         #(mk-power-chord 5 1)
 
 \gridPutMusic "chords" 11 \chordmode {
+  \fuzzOn
   \set predefinedDiagramTable = #power-prime-fret-table
   bes4:5.8 r8 des':5.8 r8 c'8:5.8 r8 aes8:5.8 |
   bes1:5.8 |
@@ -212,6 +213,7 @@
 }
 
 \gridPutMusic "chords" 12 \chordmode {
+  \fuzzOn
   \set predefinedDiagramTable = #power-fret-table
   ges4:5.8 \bar "||"
 }

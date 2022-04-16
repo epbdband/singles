@@ -29,6 +29,33 @@
     }
   }
   copyright = "© 2021-2022 Eric Bailey"
+  tagline = \markup {
+    \center-column {
+      \with-url #"https://epbd.bandcamp.com"
+      \line {
+        Recordings available @
+        epbd.bandcamp.com
+      }
+      \with-url #"https://github.com/epbdband/"
+      \line {
+        More scores available @
+        github.com/epbdband
+      }
+      \null
+      \with-url #"https://lilypond.org"
+      \line {
+        Music engraving by LilyPond
+        $(lilypond-version)
+        \char ##x2014
+        lilypond.org
+      }
+      \null
+      \with-url #"https://github.com/epbdband/singles/commits/main/new-variant"
+      \line {
+        Last updated on $(strftime "%d %B, %Y" (localtime (current-time)))
+      }
+    }
+  }
 }
 
 \paper {
@@ -60,14 +87,26 @@
 }
 
 Key = { \key f \major }
-Tempo = { \tempo 4 = 250 } % 172 }
+Tempo = { \tempo 4 = 172 }
 global = { \Tempo \defaultTimeSignature \time 4/4 }
 
 \templateInit
   #'("meta" "chords" "vox" "guitar" "guitar strum" "guitar lead" "organ up" "organ down" "drums up" "drums down")
   #'(8 8 (33 . 8) 4 4 4 8 4 4 4 8 (1 . 4))
 
-%% \gridSetRange #'(12 . 18)
+%% \gridSetRange #'(7 . 12)
+
+ope = {
+  \temporary \override NoteHead.color = #red
+  \temporary \override Stem.color = #red
+  \temporary \override Beam.color = #red
+}
+
+nope = {
+  \revert NoteHead.color
+  \revert Stem.color
+  \revert Beam.color
+}
 
 %% \Naptaker
 \napPaper
@@ -128,15 +167,21 @@ theScore = <<
 
 \score {
   \theScore
+
   \layout {
+    \override Score.VoltaBracket.thickness = #2
+    \override Score.VoltaBracket.extra-offset = #'(0 . 1)
+    \override Score.RehearsalMark.extra-offset = #'(0 . 2)
     \override Score.BarNumber.padding = #3
     \override Score.BarNumber.stencil =
       #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
   }
 }
 
+\include "articulate.ly"
+
 \score {
-  \unfoldRepeats { \Tempo \theScore }
+  \unfoldRepeats { \Tempo \articulate \theScore }
   \midi {}
 }
 
