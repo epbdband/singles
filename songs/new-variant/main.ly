@@ -1,4 +1,4 @@
-\version "2.22.2"
+\version "2.24.4"
 
 \include "oll-core/package.ily"
 \loadPackage naptaker
@@ -7,7 +7,8 @@
 \setOption naptaker.guitar-tabs ##f
 \setOption naptaker.guitar-tuning #guitar-open-d-tuning % \stringTuning <f, c f a c' f>
 \setOption naptaker.paper-orientation #'portrait
-\setOption naptaker.paper-size "arch a"
+#(set! paper-alist (cons '("henle" . (cons (* 23.5 cm ) (* 31 cm))) paper-alist))
+\setOption naptaker.paper-size "henle"
 \setOption naptaker.staff-size #18
 
 \header {
@@ -28,7 +29,7 @@
       }
     }
   }
-  copyright = "© 2021-2022 Eric Bailey"
+  copyright = "© 2021-2025 Eric Bailey"
   tagline = \markup {
     \center-column {
       \with-url #"https://epbd.bandcamp.com"
@@ -50,9 +51,9 @@
         lilypond.org
       }
       \null
-      \with-url #"https://github.com/epbdband/singles/commits/main/new-variant"
+      \with-url #"https://github.com/epbdband/singles/commits/main/songs/new-variant"
       \line {
-        Last updated on $(strftime "%d %B, %Y" (localtime (current-time)))
+        Last updated on $(strftime "%-d %B, %Y" (localtime (current-time)))
       }
     }
   }
@@ -66,7 +67,7 @@
       \fill-line {
         \null
         \line {
-          \on-the-fly #print-page-number-check-first
+          \if \should-print-page-number
           \fromproperty #'page:page-number-string
         }
       }
@@ -77,7 +78,7 @@
     \column {
       \fill-line {
         \line {
-          \on-the-fly #print-page-number-check-first
+          \if \should-print-page-number
           \fromproperty #'page:page-number-string
         }
         \null
@@ -116,7 +117,7 @@ nope = {
 \with {
   instrumentName = "Organ"
   \RemoveEmptyStaves
-  \override VerticalAxisGroup #'remove-first = ##t
+  \override VerticalAxisGroup.remove-first = ##t
   \clef "treble"
 }
 \with {
@@ -182,7 +183,12 @@ theScore = <<
 
 \score {
   \unfoldRepeats { \Tempo \articulate \theScore }
-  \midi {}
+  \midi {
+    \context {
+      \Score
+      midiChannelMapping = #'instrument
+    }
+  }
 }
 
 \gridDisplay

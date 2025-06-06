@@ -213,7 +213,7 @@
 }
 
 \gridPutMusic "chords" 12 \chordmode {
-  \fuzzOn
+  %% \fuzzOn
   \set predefinedDiagramTable = #power-fret-table
   ges4:5.8 \bar "||"
 }

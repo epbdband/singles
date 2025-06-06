@@ -1,1 +1,5 @@
 /.direnv/
+/.pre-commit-config.yaml
+/result*
+/songs/*/*.log
+/songs/*/*.midi

@@ -48,13 +48,9 @@
   \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #CENTER
   \once \override TextSpanner.bound-details.left.text = #"Fuzz"
   \once \override TextSpanner.bound-details.right.padding = #1
-  \fuzzOn \startTextSpan
   \ottava #-1
-  \repeat unfold 2 {
-    \include "notes/guitar-V.ily"
-  }
+  \include "notes/guitar-V.ily"
   \ottava #0
-  \fuzzOff \stopTextSpan
 }
 
 \gridPutMusic "guitar" 6 \relative c, {
@@ -75,12 +71,11 @@
   \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #CENTER
   \once \override TextSpanner.bound-details.left.text = #"Fuzz"
   \once \override TextSpanner.bound-details.right.padding = #1
-  \fuzzOn \startTextSpan
+  \fuzzOn
   \once \set Staff.forceClef = ##t
-  r8 f8 f8 f8 f8 f8 f8 f8 |
+  r8 f8\startTextSpan f8 f8 f8 f8 f8 f8 |
   f8 f8 f8 f8 f8 f8 f8 f8 |
-  f8\noBeam b,8 b8 b8 b8 bes8 aes8 f8 |
-  \stopTextSpan
+  f8\noBeam b,8 b8 b8 b8 bes8 aes8 f8\stopTextSpan |
 
   \bye
   R1 |
@@ -91,12 +86,11 @@
   \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #CENTER
   \once \override TextSpanner.bound-details.left.text = #"Fuzz"
   \once \override TextSpanner.bound-details.right.padding = #1
-  \startTextSpan
   \once \set Staff.forceClef = ##t
-  r8 f'8 f8 f8 f8 f8 f8 f8 |
+  r8 f'8\startTextSpan f8 f8 f8 f8 f8 f8 |
   f8 <f aes>8 q8 q8 q8 q8 q8 q8 |
-  q8 <f a>8 q8 q8 ~ q2 |
-  \fuzzOff \stopTextSpan
+  q8 <f a>8 q8 q8 ~ q2\stopTextSpan |
+  \fuzzOff
 }
 
 \gridPutMusic "guitar" 8 {
@@ -116,7 +110,7 @@
   \once \override TextSpanner.bound-details.left.stencil-align-dir-y = #CENTER
   \once \override TextSpanner.bound-details.left.text = #"Fuzz"
   \once \override TextSpanner.bound-details.right.padding = #1
-  \fuzzOn \startTextSpan
+  \fuzzOn % FIXME: \startTextSpan
   \gridGetCellMusic "guitar" 6
-  \fuzzOff \stopTextSpan
+  \fuzzOff % FIXME: \stopTextSpan
 }

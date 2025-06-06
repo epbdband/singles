@@ -19,30 +19,30 @@
 \gridPutMusic "meta" 3 {
   \mark \markup \box "A"
   \partial 8 s8
-  \set Score.repeatCommands = #'(start-repeat)
+  %% \set Score.repeatCommands = #'(start-repeat)
   s1*4
   \break
 }
 
 \gridPutMusic "meta" 4 {
   \mark \markup \box "B"
-  \set Score.repeatCommands = #'((volta "1, 2") end-repeat)
+  %% \set Score.repeatCommands = #'((volta "1, 2") end-repeat)
   s1*4
   \break
 }
 
 \gridPutMusic "meta" 5 {
   \mark \markup \box "C"
-  \set Score.repeatCommands = #'((volta "3, 4") end-repeat)
+  %% \set Score.repeatCommands = #'((volta "3, 4") end-repeat)
   s1*4
   \break
 }
 
 \gridPutMusic "meta" 6 {
   \mark \markup \box "D"
-  \set Score.repeatCommands = #'((volta "5") end-repeat)
+  %% \set Score.repeatCommands = #'((volta "5") end-repeat)
   s1*4
-  \set Score.repeatCommands = #'((volta #f))
+  %% \set Score.repeatCommands = #'((volta #f))
   \bar "||"
   \pageBreak
 }
