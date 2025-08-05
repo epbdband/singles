@@ -2,6 +2,11 @@
   description = "EPBD (try to) make songs monthly during COVID-19";
 
   inputs = {
+    emacs-overlay = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/emacs-overlay";
+    };
+
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     git-hooks-nix.url = "github:cachix/git-hooks.nix";
@@ -38,8 +43,8 @@
             nativeBuildInputs = [ prev.makeWrapper ];
 
             postBuild = ''
-              for p in $out/bin/*; do
-                  wrapProgram "$p" \
+              for p in lilypond lilypond-book; do
+                  wrapProgram "$out"/bin/"$p" \
                       --add-flags "--include=${oll-lib}" \
                       --set LILYPOND_DATADIR "$out/share/lilypond/${prev.lilypond.version}"
               done
@@ -75,12 +80,19 @@
           config.allowUnfreePredicate = pkg:
             nixpkgs.lib.hasPrefix "epbd-singles" (nixpkgs.lib.getName pkg);
           overlays = [
+            inputs.emacs-overlay.overlay
             self.overlays.default
           ];
           inherit system;
         };
 
         devShells.default = with pkgs; mkShell {
+          FONTCONFIG_FILE = makeFontsConf {
+            fontDirectories = [
+              nerd-fonts.iosevka
+            ];
+          };
+
           LILYPOND_SHARE_DIR = "${myLilypond}/share";
 
           inputsFrom = [
@@ -88,11 +100,15 @@
           ];
 
           nativeBuildInputs = [
-            # (
-            #   frescobaldi.override {
-            #     lilypond = myLilypond;
-            #   }
-            # )
+            (
+              emacsWithPackagesFromUsePackage {
+                alwaysEnsure = true;
+                config = ./emacs.el;
+                extraEmacsPackages = _epkgs: [
+                  myLilypond
+                ];
+              }
+            )
             myLilypond
             timidity
           ];

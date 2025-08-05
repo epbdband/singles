@@ -1,0 +1,20 @@
+{
+  "tracks": [
+    {
+      "instrumentId": "drum-kit-5",
+      "partId": "3",
+      "soloMuteState": {
+        "mute": true,
+        "solo": false
+      }
+    },
+    {
+      "instrumentId": "electric-bass",
+      "partId": "2",
+      "soloMuteState": {
+        "mute": true,
+        "solo": false
+      }
+    }
+  ]
+}
