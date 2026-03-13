@@ -17,7 +17,7 @@
       "Music by EPBD"
     }
   }
-  copyright = "© 2025 Eric Bailey"
+  copyright = "© 2025-2026 Eric Bailey"
   tagline = \markup {
     \center-column {
       \with-url #"https://epbd.bandcamp.com"
@@ -81,7 +81,7 @@ global = { \Tempo \defaultTimeSignature \time 4/4 }
 
 \templateInit
   #'("meta" "guitar" "bass" "drums up" "drums down")
-  #'(4)
+  #'(4 4)
 
 %% \gridSetRange #'(3 . 3)
 
