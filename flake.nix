@@ -110,7 +110,11 @@
               }
             )
             myLilypond
+            nixd
+            process-compose
+            python3Packages.pywatchman
             timidity
+            watchman
           ];
         };
 

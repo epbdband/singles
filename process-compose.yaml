@@ -1,0 +1,24 @@
+version: "0.5"
+is_strict: true
+sort:
+  isReversed: true
+
+.song: &song
+  command: |
+    watchman-make \
+      --make 'make --makefile=../../song.mk' \
+      --pattern '*.*ly' \
+      --pattern '**/*.*ly' \
+      --target all
+  depends_on:
+    watchman:
+      condition: process_started
+  disabled: true
+  namespace: songs
+
+processes:
+  watchman:
+    command: "watchman --foreground"
+  "2026-03-12":
+    <<: *song
+    working_dir: "songs/2026-03-12"
