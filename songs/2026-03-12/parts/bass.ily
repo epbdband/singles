@@ -1,12 +1,12 @@
 \gridPutMusic "bass" 1 \relative c, {
-  f4 c'4 b4 aes4 |
-  bes4 g4 aes4 ges4 |
-  f4 c'4 b4 aes4 |
-  bes4 g4 aes2 |
-  f4 c'4 b4 aes4 |
-  bes4 g4 aes4 ges4 |
-  f4 c'4 b4 aes4 |
-  f'4 e4 ees4 des4 |
+  f4\3 c'4\2 b4\2 aes4\3 |
+  bes4\2 g4\3 aes4\3 ges4\3 |
+  f4\3 c'4\2 b4\2 aes4\3 |
+  bes4\2 g4\3 aes2\3 |
+  f4\3 c'4\2 b4\2 aes4\3 |
+  bes4\2 g4\3 aes4\3 ges4\3 |
+  f4\3 c'4\2 b4\2 aes4\3 |
+  f'4\2 e4\2 ees4\2 des4\2 |
 }
 
 \gridPutMusic "bass" 2 \relative c {
@@ -16,8 +16,8 @@
   g4 des'4 c4 ges4 |
   f4 aes4 g4 ges4 |
 %}
-  c8 f, r c'[ f,] r c' f, |
-  r8 b f r b4 f4 |
-  des'8 f, r des'[ ges,] r c f, |
-  r8 aes4. g4 ges4 |
+  c8\2 f,\3 r c'\2[ f,\3] r c'\2 f,\3 |
+  r8 b\2 f\3 r b4\2 f4\3 |
+  des'8\2 f,\3 r des'\2[ ges,\3] r c\2 f,\3 |
+  r8 aes4.\3 g4\3 ges4\3 |
 }

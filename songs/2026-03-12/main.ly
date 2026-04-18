@@ -3,9 +3,10 @@
 \include "oll-core/package.ily"
 \loadPackage naptaker
 
-\setOption naptaker.guitar-tabs ##f
+\setOption naptaker.guitar-tabs ##t
 \setOption naptaker.guitar-tuning \stringTuning <d, a, d f a d'>
 \setOption naptaker.guitar-capo #3
+\setOption naptaker.bass-tabs ##t
 \setOption naptaker.paper-orientation #'portrait
 #(set! paper-alist (cons '("henle" . (cons (* 23.5 cm ) (* 31 cm))) paper-alist))
 \setOption naptaker.paper-size "henle"
