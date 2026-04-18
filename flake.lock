@@ -115,11 +115,11 @@
     "naptaker": {
       "flake": false,
       "locked": {
-        "lastModified": 1692682956,
-        "narHash": "sha256-USOSV7spTqcJnDsc1fQS7kowYiq3OkQvqBDriwmC2mE=",
+        "lastModified": 1776483161,
+        "narHash": "sha256-HyaS9aYX/DV0uRDleOOjCOsXLr82RxmX1E91yXGwgHs=",
         "owner": "naptaker",
         "repo": "naptaker",
-        "rev": "fc2d1dc7a78239dc90d5b55633c73dca4f1104d3",
+        "rev": "62f0cf296350d8966624a8b350204cba680376ba",
         "type": "github"
       },
       "original": {
