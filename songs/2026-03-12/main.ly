@@ -14,11 +14,27 @@
 \header {
   title = "2026.03.12"
   composer = \markup {
-    \right-column {
-      "Eric Bailey"
-      "Kay Heino"
-      "Preston Drum"
-    }
+    %% \combine
+      \right-column {
+        "Eric Bailey"
+        "Kay Heino"
+        "Preston Drum"
+      }
+%{
+      \with-color #red
+        \path #0.25 #'((moveto 9 2)
+                       (curveto 9 2 6 4 3 2)
+                       (curveto 3 2 -3 -1.5 0.5 -5)
+                       (lineto 9.5 -4)
+                       ;; (moveto 9.5 -1.5)
+                       (lineto 9.5 -1.5)
+                       (lineto 3.5 -0.5)
+                       (lineto 5 -1.5)
+                       ;; (moveto 5 -4)
+                       (lineto 5 -4)
+                       (lineto 10 -5)
+                       (closepath))
+%}
   }
   copyright = "© 2026 Eric Bailey"
   tagline = \markup {
