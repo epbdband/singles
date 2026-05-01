@@ -3,8 +3,9 @@
 \include "oll-core/package.ily"
 \loadPackage naptaker
 
-\setOption naptaker.guitar-tabs ##f
-\setOption naptaker.guitar-tuning #guitar-tuning
+\setOption naptaker.guitar-capo #2
+\setOption naptaker.guitar-tabs ##t
+\setOption naptaker.guitar-tuning \stringTuning <d, a, d f a d'>
 \setOption naptaker.paper-orientation #'portrait
 #(set! paper-alist (cons '("henle" . (cons (* 23.5 cm ) (* 31 cm))) paper-alist))
 \setOption naptaker.paper-size "henle"
@@ -81,7 +82,7 @@ global = { \Tempo \defaultTimeSignature \time 4/4 }
 
 \templateInit
   #'("meta" "guitar" "bass" "drums up" "drums down")
-  #'(4 4)
+  #'(4 4 4)
 
 %% \gridSetRange #'(3 . 3)
 
